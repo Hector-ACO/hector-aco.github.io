@@ -4,23 +4,25 @@ import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 const projects = [
   {
-    title: "Movilidad urbana y productividad económica en ciudades de ",
+    title: "MMovilidad urbana y productividad económica en ciudades de LATAM",
     desc: [
-      "Realice una limpieza y cambio de formato a los datos necesarios para realizar un análisis",
-      "Compare datos de diferentes fuentes para encontrar patrones en los datos",
-      "Cree un informe ejecutivo con los hallazgos acompañado de gráficas",
+      "Se utilizaron 2 datasets para este análisis, uno con el PIB por ciudad y año y otro con reportes de atrasos de trafico por ciudad. Los datos analizados fueron del año 2024 de un total de 15 ciudades.",
+      "Se realizo el cambio de tipo de datos de múltiples columnas de ambos data sets con el fin de facilitar el manejo de los datos. Se utilizo las ciudades y el año como base combinar los dos data sets. Se crearon 3 graficas diferentes(boxplot, histograma y grafico de barras comparativo) para realizar el análisis y una validación visual.",
+      "El análisis mostró ciudades que a pesar de tener un alto indice de atrasos por trafico mantiene un PIB alto.",
+      "Se recomienda invertir en infraestructura para transporte en ciudades como Bogotá, la ciudad de México y Sao Paulo ya que muestran un alto PIB a pesar de tener un gran numero de retrasos por trafico.",
     ],
-    tech: ["Python", "Jupiter Notebook"]
+    tech: ["Python", "Jupiter Notebook"],
+    img:"/assets/movilidad_1.PNG"
   },
   {
     title: "Análisis del desempeño financiero ",
     desc: [
-      "Extraje y limpié datos utilizando SQL",
-      "Realice cálculos para obtener KPIs",
-      "Designed to handle a high volume of ~5 million data points per day",
-      "Cree un informe ejecutivo mostrando una comparación entre el margen de ganancia y el ROI",
+      "Se realizo un análisis con el fin de obtener cuanto se esta ganando por país y que tan rentable es cada mercado considerando los gastos de marketing.",
+      "Se utilizo SQL para relacionar los esquemas, obtener los datos y calcular tantos los beneficios como el ROI.",
+      "Los resultados mostraron a Estados Unidos como el país con mas beneficio bruto seguido de Australia; Aunque cabe resaltar que Canadá a pesar de tener el menor beneficio cuenta con el mayor margen de ganancia.",
     ],
-    tech: ["SQL", "Excel"]
+    tech: ["SQL", "Excel"],
+    img:"/assets/financiero.PNG"
   }
 ];
 ---
@@ -50,6 +52,7 @@ const projects = [
                         desc={project.desc}
                         tech={project.tech}
                       />
+                      <img src={project.img} loading="lazy" />
                     ))}
                   </div>
             </section>
